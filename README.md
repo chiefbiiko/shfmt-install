@@ -1,5 +1,7 @@
 # shfmt-install
 
+![ci](https://github.com/chiefbiiko/shfmt-install/workflows/ci/badge.svg)
+
 Tiny `sh` script that installs the [shfmt](https://github.com/mvdan/sh/releases) binary for `linux_x86_64` or `darwin_x86_64`. Please pull request to support more!
 
 ## Usage
