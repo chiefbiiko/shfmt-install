@@ -4,9 +4,7 @@
 #   - ./install.sh "/some/optional/install/dir"
 #   or
 #   - curl -fsSL "https://raw.githubusercontent.com/chiefbiiko/shfmt-install/master/install.sh" | sh -s "/some/optional/install/dir"
-#   then to style like Google: /some/optional/install/dir/shfmt -i 2 -ci "$0"
 
-# TODO: allow more ozarx
 case $(uname -m) in
   x86_64) :;;
   *) printf "unsupported arch\n" >&2; exit 1;;
@@ -19,6 +17,6 @@ case $(uname | tr '[:upper:]' '[:lower:]') in
 esac
 
 FILE="${1:-"$(pwd)"}"/shfmt
-curl -fsSL "https://github.com/mvdan/sh/releases/download/v2.6.4/shfmt_v2.6.4${SUFFIX}" > "$FILE"
+curl -fsSL "https://github.com/mvdan/sh/releases/download/v2.6.4/shfmt_v2.6.4$SUFFIX" > "$FILE"
 chmod +x "$FILE"
-printf "${FILE}\n"
+printf "$FILE\n"
