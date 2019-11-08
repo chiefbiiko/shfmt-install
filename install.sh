@@ -14,6 +14,6 @@ case $(uname | tr '[:upper:]' '[:lower:]') in
 esac
 
 FILE="${1:-"$(pwd)"}"/shfmt
-curl -fsSL "https://github.com/mvdan/sh/releases/download/v2.6.4/shfmt_v2.6.4$SUFFIX" > "$FILE"
-chmod 755 "$FILE"
-printf "$FILE\n"
+curl -fsSL "https://github.com/mvdan/sh/releases/download/v2.6.4/shfmt_v2.6.4${SUFFIX}" > "$FILE"
+chmod +x "$FILE"
+printf "${FILE}\n"
