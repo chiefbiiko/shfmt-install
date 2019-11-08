@@ -16,7 +16,7 @@ $(curl -fsSL https://raw.githubusercontent.com/chiefbiiko/shfmt-install/master/i
 
 ```
 curl -fsSL "https://raw.githubusercontent.com/chiefbiiko/shfmt-install/master/install.sh" | sh -s /usr/local/bin
-shfmt --help
+shfmt -version
 ```
 
 ## License

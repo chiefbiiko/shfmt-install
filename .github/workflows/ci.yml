@@ -1,0 +1,16 @@
+name: ci
+
+on: [push, pull_request, release]
+
+jobs:
+  test:
+    name: test shfmt-install on ${{ matrix.os }}
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [ubuntu-latest, macos-latest]
+    steps:
+      - name: clone repo
+        uses: actions/checkout@v1.0.0
+      - name: install and check shfmt
+        run: $(./install.sh) -version

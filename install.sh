@@ -1,5 +1,7 @@
 #!/usr/bin/env sh
 
+# TODO: allow passing version argument, default to latest
+
 # usage:
 #   - ./install.sh "/some/optional/install/dir"
 #   or
