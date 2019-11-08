@@ -1,17 +1,14 @@
-#/usr/bin/env bash
+#/usr/bin/env sh
 
 # usage:
-#   - bash install.sh "/some/optional/install/dir"
+#   - ./install.sh "/some/optional/install/dir"
 #   or
-#   - curl -fsSL "www.x.yz" | sh -s "/some/optional/install/dir"
+#   - curl -fsSL "https://raw.githubusercontent.com/chiefbiiko/shfmt-install/master/install.sh" | sh -s "/some/optional/install/dir"
 #   then to style like Google: /some/optional/install/dir/shfmt -i 2 -ci "$0"
 
 case $(uname | tr '[:upper:]' '[:lower:]') in
   linux*) SUFFIX="_linux_amd64";;
   darwin*) SUFFIX="_darwin_amd64";;
-  freebsd*) SUFFIX="_freebsd_amd64";;
-  openbsd*) SUFFIX="_openbsd_amd64";;
-  netbsd*) SUFFIX="_netbsd_amd64";;
   # TODO: allow more ozarx
   *) printf "unsupported os or arch\n" >&2; exit 1;;
 esac
