@@ -25,7 +25,8 @@ esac
 asset_path="$(
   curl -fsSL https://github.com/mvdan/sh/releases | 
     grep -oE "mvdan\/sh\/releases\/download\/.+\/shfmt_.+$suffix" | 
-      head -n 1)"
+    head -n 1
+)"
 
 curl -fsSL# -o "$shfmt" "https://github.com/$asset_path"
 

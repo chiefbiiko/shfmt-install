@@ -13,4 +13,4 @@ jobs:
       - name: clone repo
         uses: actions/checkout@v1.0.0
       - name: install and check shfmt
-        run: $(sh ./install.sh) -d -i 2 -ci -sr ./install.sh
+        run: $(sh ./install.sh "$(pwd)" v2.6.4) -d -i 2 -ci -sr ./install.sh
