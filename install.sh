@@ -1,4 +1,4 @@
-#/usr/bin/env sh
+#!/usr/bin/env sh
 
 # usage:
 #   - ./install.sh "/some/optional/install/dir"
@@ -6,11 +6,16 @@
 #   - curl -fsSL "https://raw.githubusercontent.com/chiefbiiko/shfmt-install/master/install.sh" | sh -s "/some/optional/install/dir"
 #   then to style like Google: /some/optional/install/dir/shfmt -i 2 -ci "$0"
 
+# TODO: allow more ozarx
+case $(uname -m) in
+  x86_64) :;;
+  *) printf "unsupported arch\n" >&2; exit 1;;
+esac
+
 case $(uname | tr '[:upper:]' '[:lower:]') in
   linux*) SUFFIX="_linux_amd64";;
   darwin*) SUFFIX="_darwin_amd64";;
-  # TODO: allow more ozarx
-  *) printf "unsupported os or arch\n" >&2; exit 1;;
+  *) printf "unsupported os\n" >&2; exit 1;;
 esac
 
 FILE="${1:-"$(pwd)"}"/shfmt
