@@ -23,8 +23,8 @@ case "$(uname | tr '[:upper:]' '[:lower:]')" in
 esac
 
 asset_path="$(
-  curl -fsSL https://github.com/mvdan/sh/releases | 
-    grep -oE "mvdan\/sh\/releases\/download\/.+\/shfmt_.+$suffix" | 
+  curl -fsSL https://github.com/mvdan/sh/releases |
+    grep -oE "mvdan\/sh\/releases\/download\/.+\/shfmt_.+$suffix" |
     head -n 1
 )"
 
