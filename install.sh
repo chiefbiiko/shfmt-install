@@ -7,18 +7,19 @@
 #   or
 #   - curl -fsSL "https://raw.githubusercontent.com/chiefbiiko/shfmt-install/master/install.sh" | sh -s "/some/optional/install/dir"
 
-case $(uname -m) in
-  x86_64) :;;
+shfmt="${1:-"$(pwd)"}"/shfmt
+
+case "$(uname -m)" in
+  x86_64) arch="_amd64";;
   *) printf "unsupported arch\n" >&2; exit 1;;
 esac
 
-case $(uname | tr '[:upper:]' '[:lower:]') in
-  linux*) SUFFIX="_linux_amd64";;
-  darwin*) SUFFIX="_darwin_amd64";;
+case "$(uname | tr '[:upper:]' '[:lower:]')" in
+  linux*) suffix="_linux$arch";;
+  darwin*) suffix="_darwin$arch";;
   *) printf "unsupported os\n" >&2; exit 1;;
 esac
 
-FILE="${1:-"$(pwd)"}"/shfmt
-curl -fsSL "https://github.com/mvdan/sh/releases/download/v2.6.4/shfmt_v2.6.4$SUFFIX" > "$FILE"
-chmod +x "$FILE"
-printf "$FILE\n"
+curl -fsSL "https://github.com/mvdan/sh/releases/download/v2.6.4/shfmt_v2.6.4$suffix" > "$shfmt"
+chmod +x "$shfmt"
+printf "%s\n" "$shfmt"
