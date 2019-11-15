@@ -17,7 +17,7 @@ $(curl -fsSL https://raw.githubusercontent.com/chiefbiiko/shfmt-install/v0.1.0/i
 ### Proper installation
 
 ```
-curl -fsSL https://raw.githubusercontent.com/chiefbiiko/shfmt-install/master/install.sh | sh -s /usr/local/bin v2.6.4
+curl -fsSL https://raw.githubusercontent.com/chiefbiiko/shfmt-install/v0.1.0/install.sh | sh -s /usr/local/bin v2.6.4
 shfmt -version
 ```
 
